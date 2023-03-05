@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined"></span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand"><%= name %></div>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined"></span> Dashboard
+            </a>
+          </li>
+          <li onclick="playtrain()" class="sidebar-list-item">
+            <a target="_blank">
+              <span class="material-icons-outlined"></span>
+              Play
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined"></span> Statistics
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+              <span class="material-icons-outlined"></span> Leaderboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/logout" target="_blank">
+              <span class="material-icons-outlined"></span>Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+          <h2 id="playerone">PLAYER</h2>
+        </div>
+
+        <div class="main-cards">
+          <div class="card">
+            <a href="/game?type=1" class="card-inner">
+              <h3 id="avg">Average Reaction Time</h3>
+              <span class="material-icons-outlined"></span>
+            </a>
+            <h1>200ms</h1>
+          </div>
+
+          <div class="card">
+            <a href="/game?type=2" class="card-inner">
+              <h3 id="ex">Exercises</h3>
+              <span class="material-icons-outlined"></span>
+            </a>
+            <h1>25</h1>
+          </div>
+
+          <div class="card">
+            <a href="/game?type=3" class="card-inner">
+              <h3 id="ranking">Ranking</h3>
+              <span class="material-icons-outlined"></span>
+            </a>
+            <h1>1500</h1>
+          </div>
+
+          <div class="card">
+            <a href="game?type=4" class="card-inner">
+              <h3 id="miss">Miss</h3>
+              <span class="material-icons-outlined"></span>
+            </a>
+            <h1>56</h1>
+          </div>
+        </div>
+
+        <div class="charts">
+          <div class="charts-card">
+            <h2 class="chart-title">Game Modes</h2>
+            <div id="bar-chart"></div>
+          </div>
+
+          <div class="charts-card">
+            <h2 class="chart-title">Timeline</h2>
+            <div id="area-chart"></div>
+          </div>
+        </div>
+      </main>
+      <!-- End Main -->
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/scripts.js"></script>
+  </body>
+</html>

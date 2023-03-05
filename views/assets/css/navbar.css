@@ -1,0 +1,146 @@
+.navbar
+{
+    user-select:none;
+    z-index: 1000;
+    position: fixed;
+    
+    display: flex;
+    justify-content: space-between;
+
+    transition: all .2s ease-in-out;
+    
+    width: 100%;
+    padding: .5rem;
+    box-sizing: border-box;
+}
+.nav-menu
+{
+    transition: all 800ms var(--cubic-bezier);
+}
+/* top class is active when scrol-y = 0 */
+.navbar.top
+{
+    padding: 2rem 4rem 2rem 4rem;
+}
+.navbar.top > .nav-menu
+{
+    color: var(--perma-white-color);
+}
+.navbar img
+{
+    height: 2rem;
+}
+.nav-item
+{
+    padding: 1rem;
+    transition: all 200ms ease-in-out;
+}
+.nav-item:hover
+{
+    font-weight: 900;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+.nav-item:active
+{
+    transform: scale(.95);
+}
+.hamburger-container
+{
+    display: none;
+    cursor: pointer;
+}
+
+.bar
+{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    
+    background-color: var(--white-color);
+    
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+.top .bar
+{
+    background-color: var(--perma-white-color);
+}
+@media(max-width:850px)
+{
+    .navbar.top
+    {
+        padding: 1rem;
+    }
+    .navbar
+    {
+        padding:0rem 1rem;
+    }
+    .hamburger-container
+    {
+        display: flex;
+    }
+    .hamburger
+    {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2)
+    {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1)
+    {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3)
+    {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu
+    {
+        z-index: -10;
+        position: fixed;
+        /* top: 4rem; */
+        flex-direction: column;
+        right: -100%;
+        width: 100%;
+        height: 101%;
+        background-color: var(--dark-color);
+    }
+    .nav-menu.active
+    {
+        right: 0;
+    }
+}
+
+.lightTheme div:not(.top) .logo
+{
+    filter: invert(100%);
+}
+
+/* Footer */
+footer
+{
+    font-size: 1rem;
+    height: 4rem;
+    width: 100%;
+}
+footer .subtext
+{
+    padding-top: .4rem;
+    font-size: .7rem;
+}
+@media(max-width:850px)
+{
+    footer
+    {
+        font-size: .7rem;
+        height: 3rem;
+    }
+    footer .subtext
+    {
+        padding-top: .4rem;
+        font-size: .49rem;
+    }
+}
